@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Inicio de Sesión SenaLink</title>
+  <link href="../../css/Inputs.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="container__main">
+    <main class="container">
+      <img src="../../img/logo-proyecto1.png" alt="logo__Senalink" class="logo__senalink">
+
+      <!-- FORMULARIO DE LOGIN -->
+      <form action="../../controllers/login.php" method="POST">
+        <input name="correo" placeholder="Correo de empresa" type="email" required/>
+        <input name="contrasena" placeholder="Contraseña" type="password" required/>
+        <input type="hidden" name="rol" value="Empresa">
+        
+        <button type="submit" name="login">Iniciar Sesión</button>
+      </form>
+
+      <a href="Forgot.html">¿Olvidó su contraseña?</a>
+      <div class="profiles__container">
+        <a href="#">Funcionario</a>
+        <a href="CreateEmpresa.html">Crear cuenta</a>
+        <a href="../Administrador/index.html">Administrador</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

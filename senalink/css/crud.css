@@ -1,0 +1,220 @@
+@import url(variables.css);
+html {
+    font-size: 62.5%; /* Hack permite trabajar con rem */
+    box-sizing: border-box;
+    margin: 0;
+    height: 100%;
+}
+
+/* Global Styles */
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: var(--h4-font-size);
+    font-family: var(--h4-font-family);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+button{
+    padding: 1.2rem 2.4rem;
+}
+
+p{
+  margin-inline: 1rem;
+}
+
+
+.header__home {
+    display: flex;
+    justify-content: space-between; /* Space between logos */
+    align-items: center; /* Center logos vertically */
+    width: 100%;
+    padding: 10px 20px; /* Add padding for spacing */
+    background-color: var(--primary-950);
+    max-width: 100%; /* Make logos responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+.header__report{
+  margin:0 auto;
+}
+.logo__senalink{
+  height: 6rem;
+}
+.container__crud{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.container {
+  background-color: white;
+  padding: 4rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+
+}
+.container__crud--disable{
+  height: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+}
+.container--disable {
+  background-color:var(--Gray-200);
+  padding: 4rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+.table-container {
+  width: 50rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 1rem;
+  
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Elimina el espacio entre celdas */
+  display: flex;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  word-wrap: break-word; /* Permite que el texto se divida en varias líneas */
+  max-width: 300px; /* Establece un ancho máximo para las celdas */
+}
+
+th {
+  background-color: var(--Secundary-900);
+  color:var(--white);
+}
+
+td {
+  background-color:var(--white);
+  color: #000;
+}
+.table{
+  display: flex;
+  margin:  10rem;
+}
+
+  
+  /* Buttons CRUD Styles */
+  
+  .buttons__container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .buttons__crud{
+    height: 4rem;
+    padding: 1.2rem 2.4rem;
+    background-color: var(--Secundary-950);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: var(--h4-font-size);
+  }
+  
+  .modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Mantiene la ventana en la misma posición */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 15% auto; /* Centra la ventana */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50rem; /* Ancho de la ventana */
+    text-align: center; /* Centra el texto */
+    border-radius: 0.8rem;
+  }
+  
+  .buttons__disable {
+    display: flex;
+    justify-content: end;
+    margin-left: 10rem;
+    gap: 1rem;
+  }
+  .buttons__disable button {
+    font-size: var(--h4-font-size);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 1.2rem 2.4rem;
+  }
+  .cancel-button  {
+    background-color: var(--white);
+    color: #1a3d5d;
+  }
+  .disable-button {
+    background-color: #1a3d5d;
+    color: #fff;
+  }
+  
+  span{
+    font-weight: var(--h1-font-weight);
+    font-size: var(--h3-font-size);
+  }
+  
+  .form__buttons{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+.inputs__container{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+}
+
+.input-field {
+  width: 100%;
+  height: 5.6rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: var(--h4-font-size);
+}
+
+@media (max-width: 768px){
+  .buttons__container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  .buttons__container--disable{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+}

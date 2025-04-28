@@ -1,0 +1,292 @@
+@import url(variables.css);
+
+html {
+    font-size: 62.5%; /* Hack permite trabajar con rem */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Global Styles */
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: var(--h4-font-size);
+    font-family: var(--h4-font-family);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+button{
+    padding: 1.2rem 2.4rem;
+}
+
+.header__home {
+    display: flex;
+    justify-content: space-between; /* Space between logos */
+    align-items: center; /* Center logos vertically */
+    width: 100%;
+    padding: 10px 20px; /* Add padding for spacing */
+    background-color: var(--primary-950);
+    max-width: 100%; /* Make logos responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+/* Main Content */
+.main__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    padding: 2rem;
+    width: 100%;
+}
+
+.main__content .logo__senalink {
+    max-width: 100%; /* Make logo responsive */
+    height: 5rem; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the logo */
+}
+
+.main-content button{
+    width: 100%;
+    height: 4rem;
+    padding: 10px;
+    background-color:var(--Secundary-700);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 2rem;
+    padding: 1.2rem 2.4rem;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    padding: 0.4rem 1.6rem 0.4rem 2.4rem;
+    width: 75%;
+    height: 5.6rem;
+    margin-top: 2rem;
+}
+
+.search-container input {
+    border: none;
+    background: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 16px;
+    color: var(--Gray-400);
+}
+
+.search-container .search-icon {
+    color: var(--Gray-300);
+    font-size: 16px;
+}
+
+/* Slider Frame */
+.slider-frame {
+    justify-content: center;
+    width: 100%; /* Change to percentage for responsiveness */
+    max-width: 100.9rem;
+    height: auto;
+    overflow: hidden;
+}
+
+.slider-frame img {
+    width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+.slider-frame ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+    width: 100%;
+    list-style: none;
+}
+
+.slider-frame img {
+    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@keyframes slide {
+    0% { margin-left: 0; }
+    20% { margin-left: 0; }
+    25% { margin-left: -100%; }
+    45% { margin-left: -100%; }
+    50% { margin-left: -200%; }
+    70% { margin-left: -200%; }
+    75% { margin-left: -300%; }
+    100% { margin-left: -300%; }
+}
+
+
+/* Carousel Indicators */
+.carousel__indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.carousel__indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel__indicator--active {
+    background-color: var(--Secundary-950);
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+}
+
+.card__image {
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 10px;
+}
+
+.card__title {
+    font-size: var(--h4-font-size);
+    margin: 1rem 0;
+}
+
+.card__text {
+    font-size: 14px;
+    color: var(--Gray-400);
+    margin: 5px 0;
+}
+
+.card__button {
+    background-color: var(--Secundary-950);
+    color: var(--white);
+    border: 0.1rem solid var(--Gray-400);
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: var(--h4-font-size)
+}
+.card__button:hover {
+    background-color: var(--Secundary-800);
+}
+.cardh__container{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.cardh {
+    background-color: var(--white); /* Set background color */
+    border-radius: 1rem; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 2rem; /* Adequate padding */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.cardh:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25rem;
+    height: 100%; /* Set height to full viewport height */
+    background-color: var(--Gray-100); 
+    position: fixed;
+    left: -25rem; /* Oculto inicialmente */
+    transition: left 0.3s;
+    z-index: 1000; /* Asegúrate de que el menú esté por encima del contenido */
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 2rem 1.5rem; /* Increase padding for better touch targets */
+}
+
+.menu ul li a {
+    color: var(--black);
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+.content {
+    padding: 20px;
+    transition: margin-left 0.3s; /* Transición suave para el margen */
+    margin-left: 0; /* Reset margin-left to prevent shifting */
+}
+.menu-open {
+    left: 0; /* Muestra el menú */
+}
+.menu-toggle {
+    padding: 0 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.menu .logo__senalink {
+    height: 3.5rem;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .header__home {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items */
+        height: 100%;
+    }
+
+    .cards {
+        grid-template-columns: repeat(1, 1fr); /* Adjust grid for smaller screens */
+    }
+    .cardh{
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-frame {
+        width: 100%; /* Adjust width for smaller screens */
+    }
+}
